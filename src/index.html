@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password generator/manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<fieldset class="app__field">
+    <h1 class="app__name">PASSWORD GENERATOR</h1>
+    <div class="container__password">
+        <div class="field__password">
+            123123213
+            <button class="copy__to__clipboard">
+                Нажмите чтобы скопировать пароль
+            </button>
+        </div>
+    </div>
+    <ul class="list__fields">
+        <li class="field__element">
+            <p class="text__element__field">
+                Длина
+            </p>
+            <label for="length_password">
+                <input id="length_password" type="number" min="6" max="20">
+            </label>
+        </li>
+        <li class="field__element">
+            <p class="text__element__field">
+                Верхний регистр
+            </p>
+            <label>
+                <input id="upper_case" type="checkbox">
+            </label>
+        </li>
+        <li class="field__element">
+            <p class="text__element__field">
+                Нижний регистр
+            </p>
+            <label>
+                <input id="lower_case" type="checkbox">
+            </label>
+        </li>
+        <li class="field__element">
+            <p class="text__element__field">
+                Специфичные символы
+            </p>
+            <label>
+                <input id="specific_symbols" type="checkbox">
+            </label>
+        </li>
+        <li class="field__element">
+            <p class="text__element__field">
+                Цифры
+            </p>
+            <label>
+                <input id="numbers" type="checkbox">
+            </label>
+        </li>
+    </ul>
+    <button id="generate__password">
+        Сгенерировать пароль
+    </button>
+</fieldset>
+<script src="./bundle.js"></script>
+</body>
+</html>

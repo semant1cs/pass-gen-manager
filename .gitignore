@@ -1,0 +1,16 @@
+# Файлы операционной системы, редакторов, библиотек
+
+.DS_Store
+Thumbs.db
+
+.idea
+*.sublime*
+.vscode
+
+*.log*
+node_modules/
+
+# Собранный проект
+
+build
+
