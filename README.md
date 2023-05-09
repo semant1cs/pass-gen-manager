@@ -1,4 +1,4 @@
-# pass-gen-manager
+# Генератор паролей
 
 ## Project setup
 ```
@@ -20,5 +20,4 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Для предложений по коду и функционалу обращаться [s3mant1cs](https://t.me/s3mant1cs)
