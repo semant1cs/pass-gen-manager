@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Application from "@/components/ApplicationWindow.vue";
+import Application from "@/components/PasswordGeneratorWindow.vue";
 import {defineComponent} from "vue";
 
 export default defineComponent({
