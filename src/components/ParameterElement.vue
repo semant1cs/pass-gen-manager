@@ -1,19 +1,25 @@
 <template>
     <div>
         <div class="field__element">
-            <p class="text__element__field">
-                Длина
+            <p class="text-field-element">
+                {{ parameterField.title }}
             </p>
             <label for="length_password">
-                <input class="choose__length-password" id="length_password" type="number" min="6" max="20"
-                       value="10">
+                <input v-bind:class="parameterField.class" class="field-param" v-bind:type="parameterField.type">
             </label>
         </div>
     </div>
 </template>
 
 <script>
-export default {}
+export default {
+    props: {
+        parameterField: {
+            type: Object,
+            required: false
+        }
+    }
+}
 </script>
 
 <style scoped>
@@ -35,7 +41,7 @@ p {
     margin: 0
 }
 
-.choose__length-password {
+.field-param {
     border: none;
     border-left: 2px solid white;
 }

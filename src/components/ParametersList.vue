@@ -1,47 +1,26 @@
 <template>
     <div>
         <ul class="list__fields">
-<parameter-element/>
-            <li class="field__element">
-                <p class="text__element__field">
-                    Верхний регистр
-                </p>
-                <label>
-                    <input id="upper_case" type="checkbox">
-                </label>
-            </li>
-            <li class="field__element">
-                <p class="text__element__field">
-                    Нижний регистр
-                </p>
-                <label>
-                    <input id="lower_case" type="checkbox">
-                </label>
-            </li>
-            <li class="field__element">
-                <p class="text__element__field">
-                    Специфичные символы
-                </p>
-                <label>
-                    <input id="specific_symbols" type="checkbox">
-                </label>
-            </li>
-            <li class="field__element">
-                <p class="text__element__field">
-                    Цифры
-                </p>
-                <label>
-                    <input id="numbers" type="checkbox">
-                </label>
-            </li>
+            <parameter-element
+                    v-for="parameterField in parameterFields"
+                    :parameterField="parameterField"
+                    :key="parameterField.id"
+            />
         </ul>
     </div>
 </template>
 
 <script>
 import ParameterElement from "@/components/ParameterElement.vue";
+
 export default {
-    components: {ParameterElement}
+    components: {ParameterElement},
+    props: {
+        parameterFields: {
+            type: Array,
+            required: true
+        }
+    }
 }
 </script>
 

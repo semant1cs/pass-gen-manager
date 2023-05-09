@@ -1,19 +1,29 @@
 <template>
     <div class="app__field">
         <ContainerPassword/>
-        <parameters-list/>
-
+        <parameters-list :parameter-fields="parametersFields"/>
         <generate-password-button/>
     </div>
 </template>
 
 <script>
 import ContainerPassword from "@/components/ContainerPassword.vue";
-import ParametersList from "@/components/ParametersList.vue";
 import GeneratePasswordButton from "@/components/GeneratePasswordButton.vue";
+import ParametersList from "@/components/ParametersList.vue";
 
 export default {
-    components: {GeneratePasswordButton, ParametersList, ContainerPassword}
+    components: {ParametersList, GeneratePasswordButton, ContainerPassword},
+    data() {
+        return {
+            parametersFields: [
+                {id: 1, title: "Длина", type: "number", class: "length_password"},
+                {id: 2, title: "Верхний регистр", type: "checkbox", class: "upper_case"},
+                {id: 3, title: "Нижний регистр", type: "checkbox", class: "lower_case"},
+                {id: 4, title: "Специфичные символы", type: "checkbox", class: "specific_symbols"},
+                {id: 5, title: "Цифры", type: "checkbox", class: "numbers"}
+            ]
+        }
+    }
 }
 </script>
 
