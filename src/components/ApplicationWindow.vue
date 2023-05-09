@@ -86,8 +86,8 @@ export default {}
 
 .field__password button {
     position: relative;
-    bottom: -70%;
-    left: 40%;
+    bottom: -20%;
+    left: 50%;
     transform: translateX(-50%);
     background-color: #612d91;
     color: white;
