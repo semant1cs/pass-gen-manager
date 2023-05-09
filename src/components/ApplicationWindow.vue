@@ -65,6 +65,7 @@ export default {}
 * {
     box-sizing: border-box;
     background-color: #7b31c3;
+    font-size: 18px;
 }
 
 .container__password {
@@ -73,12 +74,14 @@ export default {}
     justify-content: flex-start;
     height: 50px;
     width: 100%;
-    box-shadow: 2px 2px 2px white;
+    box-shadow: 0 2px 5px white;
+    border-left: 0;
+    border-right: 0;
 }
 
 .app__name {
     text-align: center;
-    font-size: 22px;
+    font-size: 26px;
 }
 
 .field__password button {
@@ -100,7 +103,8 @@ export default {}
 }
 
 .list__fields {
-    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 p {
@@ -111,6 +115,7 @@ p {
     display: flex;
     justify-content: space-between;
     margin: 1rem 0;
+    border: 3px solid white;
 }
 
 #generate__password {
@@ -128,7 +133,7 @@ p {
 .app__field {
     margin: 40px auto auto;
     width: 450px;
-    height: 390px;
+    height: 430px;
     background-color: #7b31c3;
     border: 3px solid white;
     box-shadow: 2px 2px 2px white;
