@@ -2,7 +2,9 @@
     <div class="app__field">
         <ContainerPassword/>
         <parameters-list :parameter-fields="parametersFields"/>
-        <generate-password-button/>
+        <generate-password-button
+                @generate="generatePassword"
+        />
     </div>
 </template>
 
@@ -22,6 +24,11 @@ export default {
                 {id: 4, title: "Специфичные символы", type: "checkbox", class: "specific_symbols"},
                 {id: 5, title: "Цифры", type: "checkbox", class: "numbers"}
             ]
+        }
+    },
+    methods: {
+        generatePassword(parametersPassword) {
+            console.log(parametersPassword)
         }
     }
 }

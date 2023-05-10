@@ -1,13 +1,32 @@
 <template>
     <div>
-        <button id="generate__password">
+        <button
+                id="generate__password"
+                @click="generatePassword">
             Сгенерировать пароль
         </button>
     </div>
 </template>
 
 <script>
-export default {}
+export default {
+    data() {
+        return {
+            parametersPassword: {
+                length: 10,
+                isUpperCaseContains: false,
+                isLowerCaseContains: false,
+                isSpecificSymbolsContains: false,
+                isNumbersContains: false
+            }
+        }
+    },
+    methods: {
+        generatePassword() {
+            this.$emit('generate', this.parametersPassword)
+        }
+    }
+}
 </script>
 
 <style scoped>

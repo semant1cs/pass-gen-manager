@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="field__element">
-            <p class="text-field-element">
+            <div class="text-field-element">
                 {{ parameterField.title }}
-            </p>
+            </div>
             <label for="length_password">
                 <input v-bind:class="parameterField.class" class="field-param" v-bind:type="parameterField.type">
             </label>
@@ -37,7 +37,7 @@ export default {
     padding-left: 5px;
 }
 
-p {
+.text-field-element {
     margin: 0
 }
 
