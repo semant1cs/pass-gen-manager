@@ -14,11 +14,13 @@
 </template>
 
 <script>
+import {getRandomElementArray} from "@/utils";
+import {NUMS} from "@/const";
+
 export default {
     data() {
         return {
             password: '',
-            NUMS: '0123456789',
         }
     },
     methods: {
@@ -26,17 +28,10 @@ export default {
             let password = ''
             let lengthPassword = 10
 
-            for (let i = 0; i < lengthPassword; i++) password += this.getRandomElementArray(this.NUMS).toString()
+            for (let i = 0; i < lengthPassword; i++) password += getRandomElementArray(NUMS).toString()
 
             this.password = password
         },
-        getRandomNumber(max) {
-            return Math.round(Math.random() * max)
-        },
-        getRandomElementArray(array) {
-            return array[this.getRandomNumber(array.length - 1)]
-        }
-
     }
 }
 </script>
