@@ -4,8 +4,12 @@
             <div class="text-field-element">
                 {{ parameterField.title }}
             </div>
-            <label for="length_password">
-                <input v-bind:class="parameterField.class" class="field-param" v-bind:type="parameterField.type">
+            <label v-bind:for="parameterField.class">
+                <input
+                        v-bind:class="parameterField.class"
+                        class="field-param"
+                        v-bind:type="parameterField.type"
+                >
             </label>
         </div>
     </div>

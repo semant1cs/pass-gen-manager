@@ -1,7 +1,9 @@
 <template>
     <div class="app__field">
         <ContainerPassword/>
-        <parameters-list :parameter-fields="parametersFields"/>
+        <parameters-list
+                :parameter-fields="parametersFields"
+        />
         <generate-password-button
                 @generate="generatePassword"
         />
@@ -28,6 +30,7 @@ export default {
     },
     methods: {
         generatePassword(parametersPassword) {
+            this.parametersFields.push({id: 6, title: "asd", type: "checkbox", class: "asd"})
             console.log(parametersPassword)
         }
     }

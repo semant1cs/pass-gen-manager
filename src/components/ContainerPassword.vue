@@ -4,8 +4,8 @@
         <div class="container__password">
             <div class="field__password">
                 <div></div>
-                <div class="password-value">123123213</div>
-                <button class="copy__to-clipboard">
+                <div class="password-value">{{ this.password }}</div>
+                <button class="copy__to-clipboard" @click="generatePassword">
                     Нажмите чтобы скопировать пароль
                 </button>
             </div>
@@ -14,7 +14,35 @@
 </template>
 
 <script>
-export default {}
+export default {
+    data() {
+        return {
+            password: '',
+            NUMS: '0123456789',
+        }
+    },
+    methods: {
+        generatePassword() {
+            let count = 0
+            let password = ''
+            let lengthPassword = 10
+
+            while (count !== lengthPassword) {
+                let char = this.getRandomElementArray(this.NUMS)
+                password += char.toString()
+                count++
+            }
+            this.password = password
+        },
+        getRandomNumber(max) {
+            return Math.round(Math.random() * max)
+        },
+        getRandomElementArray(array) {
+            return array[this.getRandomNumber(array.length - 1)]
+        }
+
+    }
+}
 </script>
 
 <style scoped>
@@ -61,7 +89,7 @@ export default {}
     opacity: 1;
 }
 
-.password-value{
+.password-value {
     width: 444px;
     margin: auto;
     padding: 0;
