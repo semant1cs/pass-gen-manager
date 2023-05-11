@@ -3,8 +3,13 @@
         <h1 class="app__name">PASSWORD GENERATOR</h1>
         <div class="container__password">
             <div class="field__password">
-                <div></div>
-                <div class="password-value">{{ this.password }}</div>
+                <input
+                        class="password-value"
+                        v-on:focus="$event.target.select()"
+                        v-bind:value="password"
+                        ref="passInput"
+                        @click="copy"
+                >
                 <button class="copy__to-clipboard" @click="generatePassword">
                     Нажмите чтобы скопировать пароль
                 </button>
@@ -20,7 +25,7 @@ import {NUMS} from "@/const";
 export default {
     data() {
         return {
-            password: '',
+            password: "4123841985",
         }
     },
     methods: {
@@ -32,6 +37,10 @@ export default {
 
             this.password = password
         },
+        copy() {
+            this.$refs.passInput.focus();
+            document.execCommand('copy');
+        }
     }
 }
 </script>
@@ -84,5 +93,7 @@ export default {
     width: 444px;
     margin: auto;
     padding: 0;
+    border: 0;
+    text-align: center;
 }
 </style>
