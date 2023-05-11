@@ -23,15 +23,11 @@ export default {
     },
     methods: {
         generatePassword() {
-            let count = 0
             let password = ''
             let lengthPassword = 10
 
-            while (count !== lengthPassword) {
-                let char = this.getRandomElementArray(this.NUMS)
-                password += char.toString()
-                count++
-            }
+            for (let i = 0; i < lengthPassword; i++) password += this.getRandomElementArray(this.NUMS).toString()
+
             this.password = password
         },
         getRandomNumber(max) {
