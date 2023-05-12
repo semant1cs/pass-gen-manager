@@ -5,7 +5,6 @@
                 :parameter-fields="parametersFields"
         />
         <generate-password-button
-                @generate="generatePassword"
         />
     </div>
 </template>
@@ -20,11 +19,11 @@ export default {
     data() {
         return {
             parametersFields: [
-                {id: 1, title: "Длина", type: "number", class: "length_password"},
-                {id: 2, title: "Верхний регистр", type: "checkbox", class: "upper_case"},
-                {id: 3, title: "Нижний регистр", type: "checkbox", class: "lower_case"},
-                {id: 4, title: "Специфичные символы", type: "checkbox", class: "specific_symbols"},
-                {id: 5, title: "Цифры", type: "checkbox", class: "numbers"}
+                {id: 1, title: "Длина", type: "number", class: "length_password", value: 15},
+                {id: 2, title: "Верхний регистр", type: "checkbox", class: "upper_case", value: true},
+                {id: 3, title: "Нижний регистр", type: "checkbox", class: "lower_case", value: false},
+                {id: 4, title: "Специфичные символы", type: "checkbox", class: "specific_symbols", value: true},
+                {id: 5, title: "Цифры", type: "checkbox", class: "numbers", value: false}
             ]
         }
     },

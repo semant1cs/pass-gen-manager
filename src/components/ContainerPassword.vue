@@ -5,9 +5,9 @@
             <div class="field__password">
                 <input
                         class="password-value"
-                        v-on:focus="$event.target.select()"
-                        v-bind:value="password"
                         ref="passInput"
+                        :value="password"
+                        @focus="$event.target.select()"
                         @click="copy"
                 >
                 <button class="copy__to-clipboard" @click="generatePassword">
@@ -25,7 +25,7 @@ import {NUMS} from "@/const";
 export default {
     data() {
         return {
-            password: "4123841985",
+            password: "",
         }
     },
     methods: {
@@ -39,7 +39,7 @@ export default {
         },
         copy() {
             this.$refs.passInput.focus();
-            document.execCommand('copy');
+            navigator.clipboard.writeText(document.activeElement.value);
         }
     }
 }

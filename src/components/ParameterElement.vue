@@ -1,17 +1,29 @@
 <template>
-    <div>
-        <div class="field__element">
-            <div class="text-field-element">
-                {{ parameterField.title }}
-            </div>
-            <label v-bind:for="parameterField.class">
-                <input
-                        v-bind:class="parameterField.class"
-                        class="field-param"
-                        v-bind:type="parameterField.type"
-                >
-            </label>
+    <div v-if="parameterField.type === `number`" class="field__element">
+        <div class="text-field-element">
+            {{ parameterField.title }}
         </div>
+        <label :for="parameterField.class">
+            <input
+                    :class="parameterField.class"
+                    :type="parameterField.type"
+                    :value="parameterField.value"
+                    class="field-param"
+            >
+        </label>
+    </div>
+    <div v-else class="field__element">
+        <div class="text-field-element">
+            {{ parameterField.title }}
+        </div>
+        <label :for="parameterField.class">
+            <input
+                    :class="parameterField.class"
+                    :type="parameterField.type"
+                    :checked="parameterField.value"
+                    class="field-param"
+            >
+        </label>
     </div>
 </template>
 

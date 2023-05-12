@@ -13,7 +13,7 @@ export default {
     data() {
         return {
             parametersPassword: {
-                length: 10,
+                length: 5,
                 isUpperCaseContains: false,
                 isLowerCaseContains: false,
                 isSpecificSymbolsContains: false,

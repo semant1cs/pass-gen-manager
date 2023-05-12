@@ -36,14 +36,6 @@ export default {
     padding-right: 10px;
 }
 
-.field__element {
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem 0;
-    border: 3px solid white;
-    padding-left: 5px;
-}
-
 p {
     margin: 0
 }
